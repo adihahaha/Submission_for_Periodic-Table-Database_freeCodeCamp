@@ -163,6 +163,14 @@ ALTER TABLE ONLY public.types
 
 
 --
+-- Name: elements elements_atomic_number_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.elements
+    ADD CONSTRAINT elements_atomic_number_fkey FOREIGN KEY (atomic_number) REFERENCES public.properties(atomic_number);
+
+
+--
 -- Name: properties properties_type_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 

@@ -49,8 +49,8 @@ SET default_table_access_method = heap;
 
 CREATE TABLE public.elements (
     atomic_number integer NOT NULL,
-    symbol character varying(2),
-    name character varying(40)
+    symbol character varying(2) NOT NULL,
+    name character varying(40) NOT NULL
 );
 
 
@@ -136,6 +136,14 @@ ALTER TABLE ONLY public.elements
 
 ALTER TABLE ONLY public.elements
     ADD CONSTRAINT elements_pkey PRIMARY KEY (atomic_number);
+
+
+--
+-- Name: elements elements_symbol_name_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.elements
+    ADD CONSTRAINT elements_symbol_name_key UNIQUE (symbol, name);
 
 
 --
